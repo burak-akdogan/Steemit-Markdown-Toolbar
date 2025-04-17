@@ -13,3 +13,6 @@ This project adds a markdown toolbar to any `textarea` field on a webpage, allow
 1. Clone or download the repository:
    ```bash
    git clone https://github.com/burak-akdogan/markdown-toolbar.git
+
+```bash
+More: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
