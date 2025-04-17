@@ -20,7 +20,7 @@ function insertMarkdown(textarea, prefix, suffix) {
 function createToolbar(textarea) {
     const toolbar = document.createElement('div');
     toolbar.id = 'steemit-toolbar';
-
+//markdowns
     const buttons = [
         { label: "Bold", prefix: "**", suffix: "**", tooltip: "Bold (Ctrl+B)" },
         { label: "Italic", prefix: "_", suffix: "_", tooltip: "Italic (Ctrl+I)" },
@@ -40,14 +40,14 @@ function createToolbar(textarea) {
     buttons.forEach(btn => {
         const button = document.createElement('button');
         button.innerText = btn.label;
-        button.setAttribute('data-tooltip', btn.tooltip);  // Tooltip ekle
+        button.setAttribute('data-tooltip', btn.tooltip);  // Tooltip
         button.addEventListener('click', () => {
             console.log(btn.label);
             insertMarkdown(textarea, btn.prefix, btn.suffix);
         });
         toolbar.appendChild(button);
     });
-
+//toolbar 
     textarea.parentNode.insertBefore(toolbar, textarea);
 }
 
