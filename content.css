@@ -1,0 +1,72 @@
+/* Toolbar stili */
+#steemit-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1px;  /* Butonlar arasındaki boşluğu azalt */
+    background-color: #f7f7f7;
+    padding: 8px 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #e0e0e0;
+}
+
+/* Butonların küçültülmüş genel stili */
+#steemit-toolbar button {
+    background-color: #4CAF50;  /* Buton rengi */
+    color: white;
+    border: none;
+    border-radius: 25px;  /* Yuvarlak köşeler */
+    padding: 6px 12px;     /* Küçük iç boşluk */
+    font-size: 12px;        /* Küçük yazı boyutu */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;  /* Tooltip konumlandırma için */
+}
+
+/* Buton üzerine gelindiğinde efekt */
+#steemit-toolbar button:hover {
+    background-color: #45a049;  /* Hover rengi */
+    transform: translateY(-3px);  /* Hafif yukarıya kayma efekti */
+}
+
+/* Butona tıklanma efekti */
+#steemit-toolbar button:active {
+    background-color: #388e3c;
+    transform: translateY(1px);  /* Butonun biraz aşağıya inmesi */
+}
+
+/* Tooltip (yardımcı metin) */
+#steemit-toolbar button::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s 0.3s;
+    pointer-events: none;  /* Tooltip'a tıklanmasını engelle */
+    white-space: nowrap;
+}
+
+/* Tooltip görünür hale geldiğinde */
+#steemit-toolbar button:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: 120%;
+}
+
+/* Toolbar gizli değil, her zaman görünür */
+#steemit-toolbar {
+    visibility: visible;
+    opacity: 1;
+}
